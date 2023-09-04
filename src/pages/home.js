@@ -4,7 +4,7 @@ import { Button } from '../components/button/index.js'
 const Home = (name) => {
     return (
         <>
-            <CardPokemon name={name}/>
+            <CardPokemon name={name} />
             <Button />
         </>
     )

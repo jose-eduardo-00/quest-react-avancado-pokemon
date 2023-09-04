@@ -1,8 +1,8 @@
 import PokemonDetails from "../components/pokemon-details";
 
-const Details = (id) => {
+const Details = (name) => {
     return (
-        <PokemonDetails name={id} />
+        <PokemonDetails name={name} />
     )
 }
 

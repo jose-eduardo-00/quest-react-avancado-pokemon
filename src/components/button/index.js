@@ -1,10 +1,9 @@
-import { callPokemons } from "../../variables"
-import '../card-pokemon/index.js'
+import { getNewPokemons } from "../../pokemonList.js"
 
 
 const Button = () => {
     return (
-        <button className="btn" type="button" onClick={() => callPokemons()}>Ver Mais</button>
+        <button className="btn" type="button" onClick={() => getNewPokemons()}>Ver Mais</button>
     )
 }
 

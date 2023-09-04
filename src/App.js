@@ -1,14 +1,13 @@
-import './components/card-pokemon/index.js'
 import { createGlobalStyle } from 'styled-components';
 import { AppRoutes } from './pages/routes.js'
 
 function App() {
-  return (
-    <>
-      <GlobalStyle />
-      <AppRoutes />
-    </>
-  );
+    return (
+        <>
+            <GlobalStyle />
+            <AppRoutes />
+        </>
+    );
 }
 
 export default App;

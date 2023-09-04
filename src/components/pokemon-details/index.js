@@ -1,41 +1,42 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { pokemonsList } from '../../variables'
+import { pokemonList } from '../../pokemonList'
 
 
 const PokemonDetails = (name) => {
+    const pokemonNameCard = name.name.name
     return (
         <>
             {
-                pokemonsList.map((element, index) => {
-                    if (element.name === name.name.name) {
+                pokemonList.map((e, index) => {
+                    if (e.name === pokemonNameCard) {
                         return (
                             <Section key={index}>
                                 <Div>
-                                    <img src={element.sprite}></img>
-                                    <p>{element.name}</p>
+                                    <img src={e.sprite} alt="imagem do pokemon"></img>
+                                    <p>{e.name}</p>
                                 </Div>
                                 <div>
                                     <MovesDiv>
-                                        {element.moves.map((e, index) => {
-                                            return <p key={index}>{e}</p>
+                                        {e.moves.map((a, index) => {
+                                            return <p key={index}>{a}</p>
                                         })}
                                     </MovesDiv>
 
                                     <AbilitiesDiv>
-                                        {element.abilities.map((e, index) => {
+                                        {e.abilities.map((a, index) => {
                                             return (
                                                 <Div key={index}>
-                                                    <p>{e.abilitiesName}</p>
-                                                    <p>{e.abilitiesDescription}</p>
+                                                    <p>{a.abilitiesName}</p>
+                                                    <p>{a.abilitiesDescription}</p>
                                                 </Div>
                                             )
                                         })}
                                     </AbilitiesDiv>
 
                                     <div>
-                                        {element.types.map((e, index) => {
-                                            return <p key={index}>{e}</p>
+                                        {e.types.map((a, index) => {
+                                            return <p key={index}>{a}</p>
                                         })}
                                     </div>
                                 </div>
