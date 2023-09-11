@@ -1,12 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
-import { AppRoutes } from './pages/routes.js'
+import { AppRoutes } from './pages/routes.js';
+import { ThemesProvider } from './contexts/themeContext.js';
 
 function App() {
     return (
-        <>
+        <ThemesProvider>
             <GlobalStyle />
             <AppRoutes />
-        </>
+        </ThemesProvider>
     );
 }
 
