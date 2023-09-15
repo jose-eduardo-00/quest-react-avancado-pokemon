@@ -17,7 +17,11 @@
     "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"
   },
+
+  "homepage": "https://jose-eduardo-00.github.io/quest-react-avancado-pokemon",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
