@@ -18,8 +18,6 @@ export const Header = styled.header`
         align-items: center;
         justify-content: space-between;
         position: relative;
-        -webkit-box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
         box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
     }
 
@@ -33,8 +31,6 @@ export const Header = styled.header`
         background-color: #eeeeee;
         height: 25px;
         width: 35%;
-        -webkit-box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
         box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
         border-radius: 50%;
     }
