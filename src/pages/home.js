@@ -3,15 +3,16 @@ import { Button } from '../components/button/index.js'
 import { ThemeToggleButton } from '../components/theme-toggler-button/index.js'
 import { ThemeContext } from '../contexts/themeContext.js'
 import { useContext } from 'react'
+import { Main } from './styledHome.js'
 
 const Home = (name) => {
     const { theme } = useContext(ThemeContext)
     return (
-        <main style={{ backgroundColor: theme.background}}>
+        <Main style={{ backgroundColor: theme.background}}>
             <ThemeToggleButton />
             <CardPokemon name={name} />
             <Button />
-        </main>
+        </Main>
     )
 }
 

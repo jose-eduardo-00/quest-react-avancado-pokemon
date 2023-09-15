@@ -1,7 +1,7 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { pokemonList } from '../../pokemonList.js'
+import { pokemonList, cardColor } from '../../pokemonList.js'
 import { useEffect, useState } from 'react'
+import { Section } from './styled.js'
 
 
 const CardPokemon = (name) => {
@@ -21,10 +21,10 @@ const CardPokemon = (name) => {
                                     }
                                     return (
                                         <Link key={index} to={`/pokemon-details/${e.name}`}>
-                                            <Div onClick={pokemonName}>
+                                            <div onClick={pokemonName}>
                                                 <img src={e.sprite} alt="imagem do pokemon"></img>
                                                 <p>{e.name}</p>
-                                            </Div>
+                                            </div>
                                         </Link>
                                     )
                                 })
@@ -46,35 +46,16 @@ const CardPokemon = (name) => {
                     }
                     return (
                         <Link key={index} to={`/pokemon-details/${e.name}`}>
-                            <Div onClick={pokemonName}>
-                                <img src={e.sprite} alt="imagem do pokemon"></img>
-                                <p>{e.name}</p>
-                            </Div>
+                            <div onClick={pokemonName}  style={{background: e.color[0]}}>
+                                    <img src={e.sprite} alt="imagem do pokemon"></img>
+                                    <p>{e.name}</p>
+                                </div>
                         </Link>
-                    )
-                })
+    )
+})
             }
-        </Section>
+        </Section >
     )
 }
-
-const Section = styled.section`
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-        gap: 30px;
-        padding: 80px;
-    `
-const Div = styled.div`
-        border: 1px solid #000;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-        background-color: gray;
-    `
 
 export { CardPokemon };

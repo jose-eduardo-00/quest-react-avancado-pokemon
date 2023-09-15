@@ -1,7 +1,6 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { pokemonList } from '../../pokemonList'
-
+import { Section, Div, AbilitiesDiv, MovesDiv } from './styled.js'
 
 const PokemonDetails = (name) => {
     const pokemonNameCard = name.name.name
@@ -52,24 +51,3 @@ const PokemonDetails = (name) => {
 }
 
 export default PokemonDetails;
-
-const Section = styled.section`
-        display: flex;
-    `
-
-const Div = styled.div`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    `
-
-const MovesDiv = styled.div`
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
-    `
-
-const AbilitiesDiv = styled.div`
-        display: flex;
-        justify-content: space-around;
-    `
