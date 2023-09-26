@@ -28,9 +28,9 @@ export const Section = styled.section`
         
         div p {
             text-transform: uppercase;
-            color: #fff;
             font-size: 14px;
             font-weight: 500;
+            color: #fff;
             border-bottom: 1px solid #fff;
         }
     `

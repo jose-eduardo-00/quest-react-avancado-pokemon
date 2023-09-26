@@ -1,18 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const themes = {
     light: {
         background: '#eeeeee'
     },
     dark: {
-        background: '#051937'
+        background: '#141f1f'
     }
 }
 
 const ThemeContext = createContext({})
 
 const ThemesProvider = (props) => {
-    const [ theme, setTheme ] = useState(themes.light)
+    let myItem = JSON.parse(localStorage.getItem('background'))
+    const [ theme, setTheme ] = useState(myItem)
+
+    useEffect(() => {
+        if(myItem.background === themes.light.background){
+            return
+        }else{
+            setTheme(themes.dark)
+        }
+        
+    }, [])
+
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>
             {props.children}

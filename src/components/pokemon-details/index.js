@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { ThemeContext } from '../../contexts/themeContext'
 import { pokemonList } from '../../pokemonList'
-import { Section, Div, AbilitiesDiv, MovesDiv } from './styled.js'
+import { Link } from 'react-router-dom'
+import { Main } from './styled.js'
 
 const PokemonDetails = (name) => {
+    const { theme } = useContext(ThemeContext)
     const pokemonNameCard = name.name.name
     return (
         <>
@@ -10,38 +13,47 @@ const PokemonDetails = (name) => {
                 pokemonList.map((e, index) => {
                     if (e.name === pokemonNameCard) {
                         return (
-                            <Section key={index}>
-                                <Div>
-                                    <img src={e.sprite} alt="imagem do pokemon"></img>
-                                    <p>{e.name}</p>
-                                </Div>
-                                <div>
-                                    <MovesDiv>
-                                        {e.moves.map((a, index) => {
-                                            return <p key={index}>{a}</p>
-                                        })}
-                                    </MovesDiv>
-
-                                    <AbilitiesDiv>
-                                        {e.abilities.map((a, index) => {
-                                            return (
-                                                <Div key={index}>
-                                                    <p>{a.abilitiesName}</p>
-                                                    <p>{a.abilitiesDescription}</p>
-                                                </Div>
-                                            )
-                                        })}
-                                    </AbilitiesDiv>
-
-                                    <div>
-                                        {e.types.map((a, index) => {
-                                            return <p key={index}>{a}</p>
-                                        })}
+                            <Main key={index}  style={{background: theme.background}}>
+                                <section style={{background: e.color[0]}}>
+                                    <div id='image-pokemon'>
+                                        <img src={e.sprite} alt="imagem do pokemon"></img>
+                                        <p>{e.name}</p>
                                     </div>
-                                </div>
+                                    <div id='infos-pokemon'>
+                                        <div id='types-pokemon'>
+                                            <h1>Types</h1>
+                                            <div>
+                                                {e.types.map((a, index) => {
+                                                    return <p key={index}>{a}</p>
+                                                })}
+                                            </div>
+                                        </div>
+                                        <div id='moves-pokemon'>
+                                            <h1>Moves</h1>
+                                            <div>
+                                                {e.moves.map((a, index) => {
+                                                    return <p key={index}>{a}</p>
+                                                })}
+                                            </div>
+                                        </div>
+                                        <div id='abilities-pokemon'>
+                                            <h1>Abilities</h1>
+                                            <div>
+                                                {e.abilities.map((a, index) => {
+                                                    return (
+                                                        <div key={index}>
+                                                            <h2>{a.abilitiesName}</h2>
+                                                            <p>{a.abilitiesDescription}</p>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
 
-                                <Link to="/">Voltar a Home</Link>
-                            </Section>
+                                <Link to="/quest-react-avancado-pokemon"><button id='btn-voltar-home'>Voltar a Home</button></Link>
+                            </Main>
                         )
                     }
                 })
@@ -50,4 +62,4 @@ const PokemonDetails = (name) => {
     )
 }
 
-export default PokemonDetails;
+export { PokemonDetails };

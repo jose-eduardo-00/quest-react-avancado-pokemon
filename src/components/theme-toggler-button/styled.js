@@ -1,12 +1,7 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-    width: 100%;
+export const Section = styled.section`
     display: flex;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    background-color: #ee1515;
 
     button {
         width: 80px;

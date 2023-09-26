@@ -1,4 +1,4 @@
-import PokemonDetails from "../components/pokemon-details";
+import { PokemonDetails } from "../components/pokemon-details";
 
 const Details = (name) => {
     return (

@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import { AppRoutes } from './pages/routes.js';
 import { ThemesProvider } from './contexts/themeContext.js';
+import { AppRoutes } from './pages/routes.js';
+import { createGlobalStyle } from 'styled-components';
 
 function App() {
     return (
