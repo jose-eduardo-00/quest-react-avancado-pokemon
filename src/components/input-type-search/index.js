@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass, faRotateRight } from '@fortawesome/free-solid-svg-icons'
 import { InputSearch } from './styled.js'
-import { getField } from './functions.js'
 
 const InputTypeSearch = () => {
     return (
         <InputSearch >
-            <FontAwesomeIcon icon={faMagnifyingGlass} id='input' onClick={() => getField()} />
+            <FontAwesomeIcon icon={faMagnifyingGlass} id='search' />
             <input type="search" id="type-pokemon"></input>
+            <FontAwesomeIcon icon={faRotateRight} id='all' />
         </InputSearch>
     )
         

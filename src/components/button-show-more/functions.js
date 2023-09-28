@@ -1,9 +1,9 @@
 import { baseUrl } from "../../variables.js"
 import { getPokemonList, pokemonList } from "../../pokemonList.js"
 
-export let numPoke = 0
+let numPoke = 0
 
-export async function getNewPokemons() {
+async function getNewPokemons() {
     numPoke += 10
     const getNewPokemonList = await fetch(`${baseUrl}pokemon/?limit=10&offset=${numPoke}`)
     const response = await getNewPokemonList.json()
@@ -16,3 +16,20 @@ export async function getNewPokemons() {
     getPokemonList(newPromiseList, newPokemonList)
     pokemonList.push(...newPokemonList)
 }
+
+function newCardPokemon(state, setState, pokemonNameCard) {
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click', () => {
+        btn.classList.remove('btn')
+        btn.classList.add('loading')
+        setTimeout(() => {
+            btn.classList.remove('loading')
+            btn.classList.add('btn')
+        }, 1000)
+        setTimeout(() => {
+            setState(state.concat(pokemonNameCard))
+        }, 1000)
+    })
+}
+
+export { getNewPokemons, newCardPokemon, numPoke }

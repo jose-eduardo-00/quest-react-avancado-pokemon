@@ -3,6 +3,7 @@ import { ThemeContext, themes } from "../../contexts/themeContext";
 import { Section } from './styled.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { themeToggler } from "./functions.js";
 
 
 const ThemeToggleButton = () => {
@@ -11,15 +12,8 @@ const ThemeToggleButton = () => {
     localStorage.setItem('background', JSON.stringify(theme))
     
     useEffect(() => {
-        const div = document.querySelector('.active')
-        let myItem = JSON.parse(localStorage.getItem('background'))
-        if (myItem.background === themes.light.background) {
-            div.style.left = '2px'
-        } else {
-            div.style.left = '50px'
-        }
-        document.querySelector('.theme-toggler-button').addEventListener('click',() => ThemeToggler(themes, setTheme))
-    }, [])
+        themeToggler(themes, setTheme)
+    })
 
     return (
         <Section>
@@ -30,17 +24,6 @@ const ThemeToggleButton = () => {
             </button>
         </Section>
     )
-}
-
-function ThemeToggler(themes, setTheme) {
-    const div = document.querySelector('.active')
-    let myItem = JSON.parse(localStorage.getItem('background'))
-    if (myItem.background === themes.light.background) {
-        div.style.left = '50px'
-        setTheme(themes.light)
-    } else {
-        div.style.left = '2px'
-    }
 }
 
 export { ThemeToggleButton };

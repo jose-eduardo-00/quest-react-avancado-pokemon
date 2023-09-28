@@ -1,6 +1,6 @@
-import { useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home } from './home.js'
+import { useState } from "react"
+import { Home } from './home/home.js'
 import { Details } from './pokemonDetails'
 
 const AppRoutes = () => {

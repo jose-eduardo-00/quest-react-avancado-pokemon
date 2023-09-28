@@ -1,9 +1,10 @@
-import { getPokemons, newCardPokemon } from './functions.js'
 import { useEffect, useState } from 'react'
 import { pokemonList } from '../../pokemonList.js'
+import { getPokemons } from './functions.js'
+import { getPokemonForType, getPokemonListAgain } from '../input-type-search/functions.js'
+import { newCardPokemon } from '../button-show-more/functions.js'
 import { Link } from 'react-router-dom'
 import { Section } from './styled.js'
-import { input } from '../input-type-search/functions.js'
 
 
 await getPokemons()
@@ -14,7 +15,8 @@ const CardPokemon = (name) => {
     
     useEffect(() => {
         newCardPokemon(state, setState, pokemonNameCard)
-        input(state, setState, pokemonNameCard)
+        getPokemonForType(state, setState, pokemonNameCard)
+        getPokemonListAgain(state, setState, pokemonNameCard)
     }, [])
 
     return (
