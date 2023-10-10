@@ -8,13 +8,14 @@ import { Main, Header } from './styled.js'
 
 const Home = (name) => {
     const { theme } = useContext(ThemeContext)
+    const tema = theme.background
     return (
         <>
             <Header>
                 <InputTypeSearch />
                 <ThemeToggleButton />
             </Header>
-            <Main style={{ backgroundColor: theme.background}}>
+            <Main style={{ backgroundColor: tema}}>
                 <CardPokemon name={name} />
                 <ButtonShowMore />
             </Main>
