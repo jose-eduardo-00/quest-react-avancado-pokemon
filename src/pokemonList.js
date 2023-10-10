@@ -27,7 +27,7 @@ function getPokemonList(PromiseList, PokemonList){
                     case 'dragon': return 'linear-gradient(to right top, #0066ff, #005ce6, #0052ce, #0049b6, #003f9e, #00398d, #00337d, #002d6d, #00285f, #012352, #031e44, #051937)'
                     case 'dark': return 'linear-gradient(to right top, #49392f, #41332a, #392c25, #312620, #29201b, #281c18, #271916, #261515, #29131b, #271223, #1f152e, #051937)'
                     case 'fairy': return 'linear-gradient(to right top, #ff66cc, #ff66cc, #ff66cc, #ff66cc, #ff66cc, #e562c5, #cc5dbd, #b358b4, #7e4b9b, #4f3c7c, #262b5a, #051937)'
-                    default: console.log(`erro no ${e.name}`)
+                    default: alert(`erro no Pokemon: ${e.name}`)
                 }
             }),
             abilities: null

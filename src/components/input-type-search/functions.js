@@ -13,7 +13,8 @@ async function request() {
         }))
 }
 
-function getPokemonForType(state, setState, pokemonNameCard) {
+
+function getPokemonForType(state, setState, namePokemon) {
     const search = document.querySelector('#search')
     search.addEventListener('click', async () => {
         const input = document.querySelector('#type-pokemon')
@@ -22,13 +23,14 @@ function getPokemonForType(state, setState, pokemonNameCard) {
         const newPromiseList = await request()
 
         pokemonList.forEach(e => pokemonList.splice(e))
-        const p = newPromiseList.filter(e => e.types[0].type.name === typePokemon)
+        
+        const type = newPromiseList.filter(e => e.types[0].type.name === typePokemon)
 
-        if (p.length !== 0) {
-            getPokemonList(p, pokemonList)
+        if (type.length !== 0) {
+            getPokemonList(type, pokemonList)
             setTimeout(() => {
                 input.value = ''
-                setState(state.concat(pokemonNameCard))
+                setState(state.concat(namePokemon))
             }, 1000)
         } else {
             input.style.backgroundColor = '#ee1515'
@@ -42,10 +44,11 @@ function getPokemonForType(state, setState, pokemonNameCard) {
     })
 }
 
-function getPokemonListAgain(state, setState, pokemonNameCard) {
-    const btn = document.querySelector('#all')
+function getPokemonListAgain(state, setState, namePokemon) {
+    const btn = document.querySelector('#reload')
     btn.addEventListener('click', async () => {
         btn.classList.add('loading')
+        
         const newPromiseList = await request()
 
         getPokemonList(newPromiseList, pokemonList)
@@ -54,7 +57,7 @@ function getPokemonListAgain(state, setState, pokemonNameCard) {
             btn.classList.remove('loading')
         }, 1000)
         setTimeout(() => {
-            setState(state.concat(pokemonNameCard))
+            setState(state.concat(namePokemon))
         }, 1000)
     })
 }

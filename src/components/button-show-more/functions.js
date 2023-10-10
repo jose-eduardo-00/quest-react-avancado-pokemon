@@ -17,7 +17,7 @@ async function getNewPokemons() {
     pokemonList.push(...newPokemonList)
 }
 
-function newCardPokemon(state, setState, pokemonNameCard) {
+function newCardPokemon(state, setState, name) {
     const btn = document.querySelector('#btn')
     btn.addEventListener('click', () => {
         btn.classList.remove('btn')
@@ -25,10 +25,10 @@ function newCardPokemon(state, setState, pokemonNameCard) {
         setTimeout(() => {
             btn.classList.remove('loading')
             btn.classList.add('btn')
-        }, 1000)
+        }, 1500)
         setTimeout(() => {
-            setState(state.concat(pokemonNameCard))
-        }, 1000)
+            setState(state += name)
+        }, 1600)
     })
 }
 

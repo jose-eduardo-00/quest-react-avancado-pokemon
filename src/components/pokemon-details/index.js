@@ -6,12 +6,12 @@ import { Main } from './styled.js'
 
 const PokemonDetails = (name) => {
     const { theme } = useContext(ThemeContext)
-    const pokemonNameCard = name.name.name
+    const namePokemon = name.name
     return (
         <>
             {
                 pokemonList.map((e, index) => {
-                    if (e.name === pokemonNameCard) {
+                    if (e.name === namePokemon) {
                         return (
                             <Main key={index}  style={{background: theme.background}}>
                                 <section style={{background: e.color[0]}}>

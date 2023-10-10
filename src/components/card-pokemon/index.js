@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react'
 import { pokemonList } from '../../pokemonList.js'
-import { getPokemons } from './functions.js'
 import { getPokemonForType, getPokemonListAgain } from '../input-type-search/functions.js'
 import { newCardPokemon } from '../button-show-more/functions.js'
 import { Link } from 'react-router-dom'
 import { Section } from './styled.js'
-
+import { getPokemons } from './functions.js'
 
 await getPokemons()
 
 const CardPokemon = (name) => {
     const [state, setState] = useState([])
-    const pokemonNameCard = name.name
-    
     useEffect(() => {
-        newCardPokemon(state, setState, pokemonNameCard)
-        getPokemonForType(state, setState, pokemonNameCard)
-        getPokemonListAgain(state, setState, pokemonNameCard)
+        newCardPokemon(state, setState, name.name)
+        getPokemonForType(state, setState, name.name)
+        getPokemonListAgain(state, setState, name.name)
     }, [])
 
     return (
@@ -24,7 +21,7 @@ const CardPokemon = (name) => {
             {
                 pokemonList.map((e, index) => {
                     const pokemonName = () => {
-                        pokemonNameCard.getPokemonName(e.name)
+                        name.name.getPokemonName(e.name)
                     }
                     return (
                         <Link key={index} to={`/pokemon-details/${e.name}`}>
