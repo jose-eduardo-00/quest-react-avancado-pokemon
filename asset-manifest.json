@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/quest-react-avancado-pokemon/static/js/main.483372c4.js",
+    "main.js": "/quest-react-avancado-pokemon/static/js/main.ccbd95cd.js",
     "index.html": "/quest-react-avancado-pokemon/index.html",
-    "main.483372c4.js.map": "/quest-react-avancado-pokemon/static/js/main.483372c4.js.map"
+    "main.ccbd95cd.js.map": "/quest-react-avancado-pokemon/static/js/main.ccbd95cd.js.map"
   },
   "entrypoints": [
-    "static/js/main.483372c4.js"
+    "static/js/main.ccbd95cd.js"
   ]
 }
