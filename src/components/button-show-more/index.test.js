@@ -28,7 +28,7 @@ describe("ButtonShowMore Component", () => {
 
         expect(button).toHaveClass('loading')
         act(() => {
-            jest.advanceTimersByTime(1500)
+            jest.advanceTimersByTime(2000)
             expect(button).not.toHaveClass('loading')
         })
     });

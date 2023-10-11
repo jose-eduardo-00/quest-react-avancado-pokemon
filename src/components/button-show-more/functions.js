@@ -25,10 +25,10 @@ function newCardPokemon(state, setState, name) {
         setTimeout(() => {
             btn.classList.remove('loading')
             btn.classList.add('btn')
-        }, 1500)
+        }, 2000)
         setTimeout(() => {
             setState(state += name)
-        }, 1600)
+        }, 2100)
     })
 }
 

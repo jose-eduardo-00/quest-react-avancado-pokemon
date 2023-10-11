@@ -18,8 +18,7 @@ function getPokemonForType(state, setState, namePokemon) {
     const search = document.querySelector('#search')
     search.addEventListener('click', async () => {
         const input = document.querySelector('#type-pokemon')
-        const typePokemon = input.value
-
+        const typePokemon = input.value.toLowerCase()
         const newPromiseList = await request()
 
         pokemonList.forEach(e => pokemonList.splice(e))
