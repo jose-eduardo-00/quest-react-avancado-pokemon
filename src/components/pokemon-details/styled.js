@@ -135,7 +135,7 @@ export const Main = styled.main`
 
     #abilities-pokemon div div h2 {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         padding: 10px 0 5px 0;
     } 
@@ -153,5 +153,15 @@ export const Main = styled.main`
 
     #btn-voltar-home:hover {
         filter: invert(1);
+    }
+
+    @media(max-width: 425px) {
+        #abilities-pokemon div {
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        #abilities-pokemon div div {
+            width: 80%;
+        }
     }
 `
