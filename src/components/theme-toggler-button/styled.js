@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
     display: flex;
 
-    button {
+    .theme-toggler-button {
         width: 80px;
         height: 30px;
         padding: 0 10px;
@@ -16,7 +16,7 @@ export const Section = styled.section`
         box-shadow: 0px -1px 5px 2px rgba(0,0,0,0.75);
     }
 
-    button .active {
+    .theme-toggler-button .active {
         transition: 0.6s;
         content="";
         position: absolute;

@@ -11,17 +11,13 @@ export const InputSearch = styled.div`
     position: relative;
     cursor: pointer;
 
-    input {
+    #type-pokemon {
         text-align: center;
-        padding: 5px;
+        padding: 5px 0;
         border: 1px solid #000;
     }
 
-    #all {
-        transition: all 0.2s ease;
-    }
-
-    .loading {
+    .reload {
         animation: rotating 0.5s 0.2s linear infinite;
     }
     
@@ -34,17 +30,7 @@ export const InputSearch = styled.div`
         }
     }
 
-    #span {
-        border: 1px solid #000;
-        border-radius: 10px;
-        background-color: #eeeeee;
-        font-weight: 500;
-        z-index: 2;
-        padding: 3px 25px;
-        position: absolute;
-        transition: all 0.6s ease;
-        overflowY: hidden;
-        visibility: hidden;
-        top: 20px;
+    #search:active {
+        transform: scale(0.8);
     }
 `   
