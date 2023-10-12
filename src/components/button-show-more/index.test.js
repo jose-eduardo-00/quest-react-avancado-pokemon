@@ -11,7 +11,7 @@ describe("ButtonShowMore Component", () => {
     it("should render ButtonShowMore", () => {
         render(<ButtonShowMore />)
 
-        const button = screen.getByText(/Ver Mais/i)
+        const button = screen.getByText(/Carregar mais/i)
 
         expect(button).toBeInTheDocument()
     });
@@ -20,7 +20,7 @@ describe("ButtonShowMore Component", () => {
         const spy = jest.spyOn(newCardPokemon, 'newCardPokemon')
         render(<ButtonShowMore />)
 
-        const button = screen.getByText(/Ver Mais/i)
+        const button = screen.getByText(/Carregar mais/i)
 
         spy()
 
@@ -37,7 +37,7 @@ describe("ButtonShowMore Component", () => {
         const spy = jest.spyOn(getNewPokemons, 'getNewPokemons')
         render(<ButtonShowMore />)
         
-        const button = screen.getByText(/Ver Mais/i);
+        const button = screen.getByText(/Carregar mais/i);
         
         fireEvent.click(button);
 
